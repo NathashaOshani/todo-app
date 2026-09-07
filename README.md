@@ -33,13 +33,12 @@ npm run lint
 npm run build
 ```
 
-## Deploy to GitHub Pages
+## Deploy to Vercel
 
-The repository is configured for the `todo-app` GitHub Pages path. Run:
+Import this GitHub repository into Vercel and keep `main` as the production branch. Vercel will build and publish each new push automatically using the Vite defaults.
 
-```bash
-npm run deploy
-```
+- Build command: `npm run build`
+- Output directory: `dist`
 
 ## Limitations
 
