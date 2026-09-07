@@ -1,7 +1,9 @@
 export default function Header() {
-    return (
+  return (
     <header className="header">
-    <h1>Todo App</h1>
+      <p className="eyebrow">Plan with purpose</p>
+      <h1>TaskFlow</h1>
+      <p>Keep today clear and tomorrow organized.</p>
     </header>
-    );
-    }
+  );
+}

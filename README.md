@@ -1,16 +1,46 @@
-# React + Vite
+# TaskFlow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TaskFlow is a responsive React todo application for organizing tasks by due date and priority. Tasks are saved in the browser, so the app remains useful without an account or backend.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Create, edit, complete, and delete tasks
+- Filter tasks by today, pending, and overdue
+- Assign high, medium, or low priority
+- Persist tasks with `localStorage`
+- Responsive keyboard-accessible interface
+- Animated task transitions with Motion
 
-## React Compiler
+## Built with
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 18
+- Vite
+- Motion for React
+- CSS
+- Browser `localStorage`
 
-## Expanding the ESLint configuration
+## Run locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Before publishing changes, verify the project with:
+
+```bash
+npm run lint
+npm run build
+```
+
+## Deploy to GitHub Pages
+
+The repository is configured for the `todo-app` GitHub Pages path. Run:
+
+```bash
+npm run deploy
+```
+
+## Limitations
+
+Task data is stored only in the current browser. Accounts and cross-device synchronization would require a backend or hosted database service.

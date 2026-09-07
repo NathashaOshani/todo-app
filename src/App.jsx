@@ -5,25 +5,32 @@ import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 
 export default function App() {
-  // Step 2: Load initial todos from localStorage
   const [todos, setTodos] = useState(() => {
-    const saved = localStorage.getItem("todos");
-    return saved ? JSON.parse(saved) : [];
+    try {
+      const saved = localStorage.getItem("todos");
+      const parsed = saved ? JSON.parse(saved) : [];
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
   });
 
   const [filter, setFilter] = useState("today");
 
-  // Step 3: Save todos to localStorage whenever they change
   useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
+    try {
+      localStorage.setItem("todos", JSON.stringify(todos));
+    } catch {
+      // Keep the app usable when browser storage is unavailable.
+    }
   }, [todos]);
 
   return (
-    <div className="app">
+    <main className="app">
       <Header />
       <Tabs filter={filter} setFilter={setFilter} />
       <TodoForm setTodos={setTodos} />
-      <TodoList todos={todos} setTodos={setTodos} />
-    </div>
+      <TodoList todos={todos} setTodos={setTodos} filter={filter} />
+    </main>
   );
 }
